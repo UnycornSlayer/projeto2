@@ -1,16 +1,17 @@
 <?php
-//inicializar sessão
+//inicializar sessï¿½o
 session_start();
-
-// codificação de carateres
+include ("header.html");
+include ("header.html");
+// codificaï¿½ï¿½o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
 if( $_SESSION['login'] == TRUE){
 
-// estabelecer a ligação à base de dados
+// estabelecer a ligaï¿½ï¿½o ï¿½ base de dados
 include ("connect.php");
 
-// inicialização de variáveis
+// inicializaï¿½ï¿½o de variï¿½veis
 $nomeErr = $emailErr = "";
 $nome = $email = "";
 
@@ -34,22 +35,22 @@ function test_input($dados) {
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	if (empty($_POST["nome"])) {
-		$nomeErr = "<strong>Não deve apagar o Nome existente.</strong> PF introduza um Nome válido!";
+		$nomeErr = "<strong>Nï¿½o deve apagar o Nome existente.</strong> PF introduza um Nome vï¿½lido!";
 	} else {
 		$nome = test_input($_POST["nome"]);
 		// verifica se o nome contem carateres com ou sem assento e espaÃ§os
 		if (!preg_match("/^[a-zA-Z-' ]*$/",$nome)) {
-		  $nomeErr = "O Nome nÃ£o deve conter cararteres especiais ou números!";
+		  $nomeErr = "O Nome nÃ£o deve conter cararteres especiais ou nï¿½meros!";
 		}
 	}
 	  
 	if (empty($_POST["email"])) {
-		$emailErr = "<strong>Não deve apagar o Nome existente.</strong> PF digite um Email válido!";
+		$emailErr = "<strong>Nï¿½o deve apagar o Nome existente.</strong> PF digite um Email vï¿½lido!";
 	} else {
 		$email = test_input($_POST["email"]);
 		// verifica o formato do email
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		  $emailErr = "O formato do Email é inválido.";
+		  $emailErr = "O formato do Email ï¿½ invï¿½lido.";
 		}
 	}
 
@@ -75,44 +76,13 @@ $row = mysqli_fetch_assoc ($result);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- colocar aqui a referência ao ficheiro de estilos -->
+    <!-- colocar aqui a referï¿½ncia ao ficheiro de estilos -->
     <link href="" rel="stylesheet">
     <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
   </head>
 
   <body>
-    <header>
-      <!-- navbar -->
-      <nav>
-        <a href="#">CRUD</a>
-        <div>
-          <ul>
-            <li>
-              <a href="index.php">Home</a>
-            </li>
-            <li>
-              <a href="read.php">Listagem</a>
-            </li>
-            <li >
-              <a href="create.php">Criar Novo</a>
-            </li>
-            <li>
-              <a href="close_session.php">Terminar sess&atilde;o</a>
-            </li>
-          </ul>
-
-          <!-- pesquisa -->
-          <form role="form" name="frmPesquisa" method="post" action="read.php">
-            <input type="text" placeholder="Pesquisa" aria-label="Search" name="pesquisa">
-            <button type="submit">Pesquisar</button>
-          </form>
-
-        </div>
-      </nav>
-      <!-- /.navbar -->
-    </header>
-
-    <main>     
+     <main>     
       <div><!-- contentor -->   
         <legend>CR<strong>Update</strong>D</legend>
     </div>
@@ -165,17 +135,12 @@ $row = mysqli_fetch_assoc ($result);
             </div>
         </form>
       </div><!-- /.container -->
-
-      <!-- footer -->
-      <footer>
-        <p>&copy; 2021 Jos&eacute; Monteiro</p>
-      </footer>
-      <!-- /.footer -->
+      <?php include ("footer.html"); ?>
     </main>	
 	</body>
 </html>
 <?php
-// fechar a ligação à base de dados
+// fechar a ligaï¿½ï¿½o ï¿½ base de dados
 mysqli_close ($conn);
 
 } else {

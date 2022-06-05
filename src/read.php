@@ -1,13 +1,13 @@
 <?PHP
-//inicializar sesão
+//inicializar sesï¿½o
 session_start();
-
-// codificação de carateres
+include ("header.html");
+// codificaï¿½ï¿½o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
 if( $_SESSION['login'] == TRUE){
 
-// estabelecer a ligação à base de dados
+// estabelecer a ligaï¿½ï¿½o ï¿½ base de dados
 include ("connect.php");
 
 if(isset ($_POST['pesquisa'])) {
@@ -28,44 +28,13 @@ if(isset ($_POST['pesquisa'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- colocar aqui a referência ao ficheiro de estilos -->
+    <!-- colocar aqui a referï¿½ncia ao ficheiro de estilos -->
     <link href="" rel="stylesheet">
     <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
   </head>
 
   <body>
-    <header>
-      <!-- navbar -->
-      <nav>
-        <a href="#">CRUD</a>
-        <div>
-          <ul>
-            <li>
-              <a href="index.php">Home</a>
-            </li>
-            <li>
-              <a href="read.php">Listagem</a>
-            </li>
-            <li >
-              <a href="create.php">Criar Novo</a>
-            </li>
-            <li>
-              <a href="close_session.php">Terminar sess&atilde;o</a>
-            </li>
-          </ul>
-
-          <!-- pesquisa -->
-          <form  name="frmPesquisa" method="post" action="read.php">
-            <input type="text" placeholder="Pesquisa" aria-label="Search" name="pesquisa">
-            <button type="submit">Pesquisar</button>
-          </form>
-
-        </div>
-      </nav>
-      <!-- /.navbar -->
-    </header>
-
-    <main>     
+      <main>     
       <div><!-- contentor -->   
         <div > <!-- titulo -->
             <legend>C<strong>Read</strong>UD</legend>
@@ -99,16 +68,12 @@ if(isset ($_POST['pesquisa'])) {
       </div><!-- /.container -->
 
 
-      <!-- FOOTER -->
-      <footer">
-        <p>&copy; 2021 Jos&eacute; Monteiro</p>
-      </footer>
-      <!-- /.FOOTER -->
+      <?php include ("footer.html"); ?>
     </main>
 </body>
 </html>
 <?php
-// fechar a ligação à base de dados
+// fechar a ligaï¿½ï¿½o ï¿½ base de dados
 mysqli_close ($conn);
 
 } else {

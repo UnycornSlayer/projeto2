@@ -1,7 +1,7 @@
 <?php
 //inicializar sess�o
 session_start();
-
+include ("header.html");
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
@@ -9,6 +9,7 @@ if( $_SESSION['login'] == TRUE){
 
 // estabelecer a liga��o � base de dados
 include ("connect.php");
+
 
 // inicializa��o de vari�veis
 $nomeErr = $emailErr = $passwordErr= "";
@@ -78,36 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   </head>
 
   <body>
-  <header>
-      <!-- navbar -->
-      <nav>
-        <a href="#">CRUD</a>
-        <div>
-          <ul>
-            <li>
-              <a href="index.php">Home</a>
-            </li>
-            <li>
-              <a href="read.php">Listagem</a>
-            </li>
-            <li >
-              <a href="create.php">Criar Novo</a>
-            </li>
-            <li>
-              <a href="close_session.php">Terminar sess&atilde;o</a>
-            </li>
-          </ul>
 
-          <!-- pesquisa -->
-          <form name="frmPesquisa" method="post" action="read.php">
-            <input type="text" placeholder="Pesquisa" aria-label="Search" name="pesquisa">
-            <button type="submit">Pesquisar</button>
-          </form>
-
-        </div>
-      </nav>
-      <!-- /.navbar -->
-    </header>
 
     <main>
 
@@ -176,11 +148,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
       </div><!-- /.container -->
 
-      <!-- footer -->
-      <footer>
-        <p>&copy; 2021 Jos&eacute; Monteiro</p>
-      </footer>
-      <!-- /.footer -->
+      <?php include ("footer.html"); ?>
     </main>
   </body>
 </html>

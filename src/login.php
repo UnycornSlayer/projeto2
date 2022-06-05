@@ -70,8 +70,9 @@ if( !empty( $_SESSION['login'] )){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  
     <link rel="stylesheet" href="assets/css/login.css">
 
    
@@ -80,8 +81,7 @@ if( !empty( $_SESSION['login'] )){
   </head>
 
   <body>
-  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src = "../node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
+  
     <main>
       <!-- info -->
       <?php
@@ -108,8 +108,11 @@ if( !empty( $_SESSION['login'] )){
           </div>
         </div>
       </div>
-      <script>
-        $("#getCodeModal").modal("show");
+      <script>  
+        jQuery.noConflict();
+        jQuery(function($) {
+        $('#exampleModal').modal('show');
+        });
       </script>
       
       <?php } ?>
@@ -143,7 +146,9 @@ if( !empty( $_SESSION['login'] )){
 
         </div>
     </main>
+    <script src = "../node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
   </body>
+
 </html>
 <?php
   mysqli_close($conn);
