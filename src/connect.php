@@ -2,6 +2,6 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$database = "projeto2";
+$database = "geredb";
 $conn =mysqli_connect ($hostname, $username, $password, $database);
 ?>

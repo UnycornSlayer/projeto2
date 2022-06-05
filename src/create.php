@@ -1,7 +1,7 @@
 <?php
 //inicializar sess�o
 session_start();
-include ("header.html");
+include ("assets/html/header.html");
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
@@ -148,7 +148,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
       </div><!-- /.container -->
 
-      <?php include ("footer.html"); ?>
+      <?php include ("assets/html/footer.html"); ?>
     </main>
   </body>
 </html>

@@ -1,8 +1,7 @@
 <?php
 //inicializar sess�o
 session_start();
-include ("header.html");
-include ("header.html");
+include ("assets/html/header.html");
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
@@ -128,14 +127,14 @@ $row = mysqli_fetch_assoc ($result);
                 <div>
 					<input name="codigo" type="hidden" value="<?PHP echo $codigo; ?>" />
 					<button name="alterar" type="submit" >Alterar</button>
-					<button name="limpar" type="reset" >Limpar</button>
+					<button name="limpar" type="reset" >Reset</button>
 					<a href="read.php">Voltar &agrave; Lista</a>
                 </div>
               </div>
             </div>
         </form>
       </div><!-- /.container -->
-      <?php include ("footer.html"); ?>
+      <?php include ("assets/html/footer.html"); ?>
     </main>	
 	</body>
 </html>
