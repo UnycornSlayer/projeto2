@@ -28,8 +28,9 @@ if(isset ($_POST['pesquisa'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- colocar aqui a refer�ncia ao ficheiro de estilos -->
-    <link href="" rel="stylesheet">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
     <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
   </head>
 
@@ -59,8 +60,31 @@ if(isset ($_POST['pesquisa'])) {
 				<td><?PHP echo $row ["nome"]?></td>
 				<td><?PHP echo $row ["email"]?></td>
 				<td><a href="update.php?codigo=<?PHP echo $row ["codigo"]?>">Alterar</a></td>
-				<td><a href="delete.php?codigo=<?PHP echo $row ["codigo"]?>">Eliminar</a></td>
+				<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?PHP echo $row ["codigo"]?>">Eliminar</button></a></td>
+              
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal<?PHP echo $row ["codigo"]?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 				</tr>
+
 				<?php } ?>
 			</table>
 
@@ -70,6 +94,7 @@ if(isset ($_POST['pesquisa'])) {
 
       <?php include ("assets/html/footer.html"); ?>
     </main>
+    <script src = "../node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
 </body>
 </html>
 <?php
