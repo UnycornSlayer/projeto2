@@ -65,7 +65,6 @@ if( !empty( $_SESSION['login'] )){
 <html lang="pt">
   <head>
   <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
-    <html lang="??" >
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">

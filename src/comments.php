@@ -3,7 +3,7 @@
 session_start();
 
 // codifica��o de carateres
-ini_set('default_charset', 'ISO8859-1');
+
 include ("assets/html/header.html");
 include ("connect.php");
 
@@ -13,14 +13,14 @@ if( $_SESSION['login'] == TRUE){
 <html lang="pt">
 
   <head>
-	  <meta http-equiv="content-type" content="text/html; charset=ISO8859-1">
-    <meta charset="ISO8859-1">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <!-- colocar aqui a refer�ncia ao ficheiro de estilos -->
     <title>Perfil do utilizador</title>
+    <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
   </head>
   <body class="text-center">
 
