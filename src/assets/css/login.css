@@ -1,0 +1,28 @@
+.main{
+    padding-right: 3rem;
+    padding-left: 3rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    align-items: center;
+}
+
+form{
+    width: 23rem;
+}
+
+h3{
+    font-weight: normal;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.form-outline{
+    margin-bottom: 1.5rem;
+}
+
+.btn{
+    background-image: linear-gradient(to right,#94f2ac, #09e641);
+    display: block;
+}
+

@@ -1,18 +1,18 @@
 <?php
-//inicializar sessão
+//inicializar sessï¿½o
 session_start();
 
-// codificação de carateres
+// codificaï¿½ï¿½o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
-// inicialização de variáveis
+// inicializaï¿½ï¿½o de variï¿½veis
 $passwordErr = $emailErr = $autErr = "";
 $password = $email = "";
 
-// estabelecer a ligação à base de dados
+// estabelecer a ligaï¿½ï¿½o ï¿½ base de dados
 include ("connect.php");
 
-// verifica se foi inserido código
+// verifica se foi inserido cï¿½digo
 function test_input($dados) {
 	$dados = trim($dados);
 	$dados = stripslashes($dados);
@@ -32,7 +32,7 @@ if( !empty( $_SESSION['login'] )){
       $email = test_input($_POST["email"]);
       // verifica o formato do email
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "O formato do Email é inválido.";
+        $emailErr = "O formato do Email ï¿½ invï¿½lido.";
       }
     }
 
@@ -51,7 +51,7 @@ if( !empty( $_SESSION['login'] )){
         $_SESSION['login'] = TRUE;
         header ('Location: index.php');
       } else {
-        $autErr ="PF verifique os dados de autenticação";
+        $autErr ="PF verifique os dados de autenticaï¿½ï¿½o";
       }
   
     }
@@ -69,72 +69,80 @@ if( !empty( $_SESSION['login'] )){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap413/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="bootstrap413/css/signin.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .form-signin {
-        width: 100%;
-        max-width: 400px;
-        padding: 15px;
-        margin: auto;
-      }
-      
-    </style>
+   
 
     <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>  
   </head>
 
   <body>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src = "../node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
     <main>
-
       <!-- info -->
       <?php
         if($_SERVER["REQUEST_METHOD"] == "POST" AND ($passwordErr !="" OR $emailErr != "" OR $autErr !="")) {
       ?>
-      <div>
-        <h4>Alerta!</h4>
-        <hr>
-        <?php
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <?php
           echo $autErr;
           echo $emailErr;
           echo $passwordErr;
-        ?>
+          ?>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <?php } ?><!-- /.info -->
+      <script>
+        $("#getCodeModal").modal("show");
+      </script>
+      
+      <?php } ?>
 
-      <form name="frmLogin" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">          
-          <h1>Autentica&ccedil;&atilde;o</h1>
-          <input type="email" name="email"  placeholder="Email" value="<?php echo $email; ?>" required autofocus>
-          </div>
-          <input type="password" name="password" placeholder="Password" required>
-          <div>
-          <label>
-              <input type="checkbox" value="remember-me"> Memorizar
-          </label>
-          </div>
-          <button type="submit">Entrar</button>
-          <p>&copy; Jos&eacute; Monteiro 2021</p>
-      </form>
+      <!-- Modal -->
+      
+
+
+
+      <div class="main align-items-center">
+
+          <form  name="frmLogin" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+            <h3>Log in</h3>
+
+            <div class="form-outline">
+              <input type="email" name="email" class="form-control form-control-lg"/>
+              <label class="form-label">Email address</label>
+            </div>
+
+            <div class="form-outline">
+              <input type="password" name="password" class="form-control form-control-lg" />
+              <label class="form-label">Password</label>
+            </div>
+
+            <div class="pt-1 mb-4">
+              <button class="btn btn-lg" type="submit">Login</button>
+            </div>
+
+          </form>
+
+        </div>
     </main>
-
   </body>
 </html>
 <?php
