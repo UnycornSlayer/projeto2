@@ -59,13 +59,9 @@ if(isset ($_POST['pesquisa'])) {
 				<td><?PHP echo $row ["codigo"]?></td>
 				<td><?PHP echo $row ["nome"]?></td>
 				<td><?PHP echo $row ["email"]?></td>
-<<<<<<< HEAD
 				<td><button class="btn btn-dark link-light"><a href="update.php?codigo=<?PHP echo $row ["codigo"]?>" class="link-light">Alterar</a></button></td>
-				<td><button type="button" class="btn btn-dark link-light" data-toggle="modal" data-target="#exampleModal<?PHP echo $row ["codigo"]?>">Eliminar</button></a></td>
-=======
-				<td><a href="update.php?codigo=<?PHP echo $row ["codigo"]?>">Alterar</a></td>
-				<td><button type="button" class="btn btn-primary" data-bs-toggle="modal"data-bs-target="#exampleModal<?PHP echo $row ["codigo"]?>">delete</button></td>
->>>>>>> main
+				<td><button type="button" class="btn btn-dark link-light" data-bs-toggle="modal"data-bs-target="#exampleModal<?PHP echo $row ["codigo"]?>">Eliminar</button></td>
+
               
         <!-- Modal -->
   <div id="exampleModal<?PHP echo $row ["codigo"]?>" class="modal fade" role="dialog" tabindex="-1">
