@@ -3,7 +3,7 @@
 session_start();
 
 // codifica��o de carateres
-ini_set('default_charset', 'ISO8859-1');
+
 
 // inicializa��o de vari�veis
 $passwordErr = $emailErr = $autErr = "";
@@ -51,7 +51,7 @@ if( !empty( $_SESSION['login'] )){
         $_SESSION['login'] = TRUE;
         header ('Location: index.php');
       } else {
-        $autErr ="PF verifique os dados de autentica��o";
+        $autErr ="PF verifique os dados de autenticação";
       }
   
     }
@@ -64,8 +64,8 @@ if( !empty( $_SESSION['login'] )){
 <!DOCTYPE html>
 <html lang="pt">
   <head>
-  <meta http-equiv="content-type" content="text/html; charset=ISO8859-1">
-    <meta charset="ISO8859-1">
+  <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+    <html lang="??" >
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -91,7 +91,7 @@ if( !empty( $_SESSION['login'] )){
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">ERROR!</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -102,8 +102,7 @@ if( !empty( $_SESSION['login'] )){
           ?>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-lg" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
