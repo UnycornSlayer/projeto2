@@ -75,15 +75,14 @@ $row = mysqli_fetch_assoc ($result);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- colocar aqui a refer�ncia ao ficheiro de estilos -->
-    <link href="" rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
   </head>
-
-  <body>
-     <main>     
+  <body class="text-center">
+    
+<main class="form-signin w-100 m-auto">   
       <div><!-- contentor -->   
-        <legend>CR<strong>Update</strong>D</legend>
+      <br><legend>CR<strong>Update</strong>D</legend><br>
     </div>
 
     <div><!-- info -->
@@ -107,33 +106,35 @@ $row = mysqli_fetch_assoc ($result);
             </div>
         <?php }	?>
     </div><!-- /.info -->
-
+    <br><br>
     <div><!-- contentor do formulario --> 
         <form name="frmInserir" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div>
-              <label for="nome">Nome </label>
-              <div>
+              <label for="nome"><b>Nome</b></label>
+              <div class="form-floating">
                 <input name="nome" type="text" value="<?php echo $row['nome'];?>" placeholder="Nome"/>
               </div>
             </div>
             <div>
-              <label for="email">Email </label>
-              <div>
+              <label for="email"><b>Email</b></label>
+              <div class="form-floating">
                 <input name="email" type="email" value="<?php echo $row['email'];?>" placeholder="Email"/>
               </div>
             </div>
+            <br>
             <div>
               <div>
                 <div>
 					<input name="codigo" type="hidden" value="<?PHP echo $codigo; ?>" />
-					<button name="alterar" type="submit" >Alterar</button>
-					<button name="limpar" type="reset" >Reset</button>
-					<a href="read.php">Voltar &agrave; Lista</a>
+					<button class="btn btn-dark" name="alterar" type="submit">Alterar</button>
+					<button class="btn btn-dark" name="limpar" type="reset">Reset</button>
+					<button class="btn btn-dark"><a href="read.php" class="link-light">Voltar &agrave; Lista</a></button>
                 </div>
               </div>
             </div>
         </form>
       </div><!-- /.container -->
+      <br><br>
       <?php include ("assets/html/footer.html"); ?>
     </main>	
 	</body>

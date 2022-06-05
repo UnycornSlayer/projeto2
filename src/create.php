@@ -74,17 +74,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- colocar aqui a referência ao ficheiro de estilos -->
-    <link href="" rel="stylesheet">
     <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
   </head>
 
-  <body>
-
-
-    <main>
+  <body class="text-center">
+    
+    <main class="form-signin w-100 m-auto"> 
 
       <div> <!-- titulo -->
-        <legend><strong>Create</strong>RUD</legend>
+        <legend><strong>Create</strong>RUD</legend><br>
       </div>
 
       <div><!-- info -->
@@ -109,45 +107,47 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
         <?php }	?>
       </div><!-- /.info -->
+      <br><br>
+      <div class="d-flex justify-content-center"><!-- contentor do formulario --> 
+        <form class="center" name="frmInserir" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
-      <div><!-- contentor do formulario --> 
-        <form name="frmInserir" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <div>
-              <label>Nome </label>
-              <div >
-                <input name="nome" type="text" value="<?php echo $nome;?>" placeholder="Nome" <?php echo $disabled ?>>
-              </div>
+            <div class="form-group">
+                <label for="nome" class="form-label">Nome</label>
+                <input class="form-control" name="nome" type="text" value="<?php echo $nome;?>" placeholder="Nome" <?php echo $disabled ?>>
             </div>
-            <div>
-              <label>Email </label>
-              <div>
-                <input name="email" type="email" value="<?php echo $email;?>" placeholder="Email" <?php echo $disabled ?>>
-              </div>
+        
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input class="form-control" name="email" type="email" value="<?php echo $email;?>" placeholder="Email" <?php echo $disabled ?>>
             </div>
+
             <div <?php echo $hidden ?>>
-              <label>Password </label>
-              <div>
-                <input name="password" type="password" placeholder="Password [min. 5 caracteres]"/>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input class="form-control" name="password" type="password" placeholder="Password [min. 5 caracteres]"/>
               </div>
             </div>
+
             <div <?php echo $hidden ?>>
-              <label>Repetir password </label>
-              <div>
-                <input name="rpassword" type="password" placeholder="Pepetir a password"/>
+            
+            <div class="form-group">
+                <label for="rpassword" class="form-label">Repetir Password</label>
+                <input class="form-control" name="rpassword" type="password" placeholder="Pepetir a password"/>
               </div>
             </div>
+            <br>
             <div>
               <div>
                 <div>	
-                  <button name="gravar" type="submit" <?php echo $disabled ?>>Gravar</button>
-                  <button name="limpar" type="reset" >Limpar</button>
-                  <a href="read.php">Voltar &agrave; Lista</a>
+                  <button class="btn btn-dark" name="gravar" type="submit" <?php echo $disabled ?>>Gravar</button>
+					<button class="btn btn-dark" name="limpar" type="reset">Reset</button>
+					<button class="btn btn-dark"><a href="read.php" class="link-light">Voltar &agrave; Lista</a></button>
                 </div>
               </div>
             </div>
         </form>
       </div><!-- /.container -->
-
+      <br><br>
       <?php include ("assets/html/footer.html"); ?>
     </main>
   </body>

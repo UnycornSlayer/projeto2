@@ -33,19 +33,19 @@ if(isset ($_POST['pesquisa'])) {
 
     <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
   </head>
-
   <body>
-      <main>     
+    
+<main class="form-signin w-100 m-auto">    
       <div><!-- contentor -->   
-        <div > <!-- titulo -->
+        <div class="text-center"> <!-- titulo -->
             <legend>C<strong>Read</strong>UD</legend>
         </div>
-
-        <div> <!-- info -->
+      
+        <div class="text-center"> <!-- info -->
             <p>Foram encontrado(s) <?PHP echo mysqli_num_rows ($result)?> registo(s).</p>
         </div>
-
-        <div> <!-- listagem -->
+        <br>
+        <div class="d-flex justify-content-center"> <!-- listagem -->
   			<table>
 				<tr>
 					<td width="80"><strong>C&Oacute;DIGO</strong></td>
@@ -59,8 +59,8 @@ if(isset ($_POST['pesquisa'])) {
 				<td><?PHP echo $row ["codigo"]?></td>
 				<td><?PHP echo $row ["nome"]?></td>
 				<td><?PHP echo $row ["email"]?></td>
-				<td><a href="update.php?codigo=<?PHP echo $row ["codigo"]?>">Alterar</a></td>
-				<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?PHP echo $row ["codigo"]?>">Eliminar</button></a></td>
+				<td><button class="btn btn-dark link-light"><a href="update.php?codigo=<?PHP echo $row ["codigo"]?>" class="link-light">Alterar</a></button></td>
+				<td><button type="button" class="btn btn-dark link-light" data-toggle="modal" data-target="#exampleModal<?PHP echo $row ["codigo"]?>">Eliminar</button></a></td>
               
         <!-- Modal -->
 <div class="modal fade" id="exampleModal<?PHP echo $row ["codigo"]?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -91,7 +91,7 @@ if(isset ($_POST['pesquisa'])) {
       </div><!-- /.listagem -->
       </div><!-- /.container -->
 
-
+<br><br>
       <?php include ("assets/html/footer.html"); ?>
     </main>
     <script src = "../node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
