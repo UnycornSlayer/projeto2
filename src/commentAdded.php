@@ -47,6 +47,8 @@ if( $_SESSION['login'] == TRUE){
         ?>
 
 
+<br>
+<button class="btn btn-dark link-light"><a href="comments.php" class="link-light">Ver todos os comentarios</a></button>
 
 <br><br>
     <?php include ("assets/html/footer.html"); ?>

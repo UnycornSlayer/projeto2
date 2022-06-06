@@ -20,7 +20,7 @@ if( $_SESSION['login'] == TRUE){
     <meta name="author" content="">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <!-- colocar aqui a refer�ncia ao ficheiro de estilos -->
-    <title>Perfil do utilizador</title>
+    <title>Perfil do Utilizador</title>
   </head>
   <body class="text-center">
     

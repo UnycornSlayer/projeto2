@@ -24,7 +24,7 @@ include ("connect.php");
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 
-    <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
+    <title>Listagem</title>
   </head>
   <body>
     
@@ -35,7 +35,7 @@ include ("connect.php");
         </div>
       
         <div class="text-center"> <!-- info -->
-            <p>Foram encontrado(s) <?PHP echo mysqli_num_rows ($result)?> registo(s).</p>
+            <p>Foram encontrado(s) <b><?PHP echo mysqli_num_rows ($result)?></b> registo(s).</p>
         </div>
         <br>
         <div class="d-flex justify-content-center"> <!-- listagem -->

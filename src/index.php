@@ -19,7 +19,7 @@ if( $_SESSION['login'] == TRUE){
     <meta name="author" content="">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <!-- colocar aqui a refer�ncia ao ficheiro de estilos -->
-    <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
+    <title>Home page</title>
   </head>
 
   <body>

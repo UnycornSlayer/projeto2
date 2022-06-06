@@ -76,7 +76,7 @@ $row = mysqli_fetch_assoc ($result);
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
+    <title>Alteração de dados do Utilizador</title>
   </head>
   <body class="text-center">
     

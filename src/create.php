@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- colocar aqui a referência ao ficheiro de estilos -->
-    <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>
+    <title>Criar Novo User</title>
   </head>
 
   <body class="text-center">

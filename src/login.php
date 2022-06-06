@@ -76,7 +76,7 @@ if( !empty( $_SESSION['login'] )){
 
    
 
-    <title>EXEMPLO PARA GEST&Atilde;O DA BASE DE DADOS</title>  
+    <title>Login</title>  
   </head>
 
   <body>
@@ -120,7 +120,7 @@ if( !empty( $_SESSION['login'] )){
 
 
 
-      <div class="main align-items-center">
+      <div class="main align-items-center d-flex justify-content-center">
 
           <form  name="frmLogin" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
