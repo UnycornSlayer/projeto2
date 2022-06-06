@@ -4,7 +4,7 @@ session_start();
 
 // codifica��o de carateres
 
-include ("assets/html/header.html");
+include ("assets/html/header.php");
 include ("connect.php");
 
 if( $_SESSION['login'] == TRUE){

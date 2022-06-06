@@ -1,7 +1,7 @@
 <?PHP
 //inicializar ses�o
 session_start();
-include ("assets/html/header.html");
+include ("assets/html/header.php");
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
@@ -10,13 +10,6 @@ if( $_SESSION['login'] == TRUE){
 // estabelecer a liga��o � base de dados
 include ("connect.php");
 
-if(isset ($_POST['pesquisa'])) {
-	$query = "SELECT * FROM contatos WHERE nome LIKE '%$_POST[pesquisa]%' OR email LIKE '%$_POST[pesquisa]%'";
-	$result = mysqli_query ($conn, $query);	
-} else {
-	$query = "SELECT * FROM contatos";
-	$result = mysqli_query($conn, $query);
-}
 ?>
 
 <!DOCTYPE html>

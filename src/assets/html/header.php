@@ -1,3 +1,19 @@
+<?php
+// codifica��o de carateres
+ini_set('default_charset', 'ISO8859-1');
+
+// estabelecer a liga��o � base de dados
+include ("connect.php");
+
+if(isset ($_POST['pesquisa'])) {
+	$query = "SELECT * FROM contatos WHERE nome LIKE '%$_POST[pesquisa]%' OR email LIKE '%$_POST[pesquisa]%'";
+	$result = mysqli_query ($conn, $query);	
+} else {
+	$query = "SELECT * FROM contatos";
+	$result = mysqli_query($conn, $query);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,10 +34,11 @@
         <li class="nav-item"><a href="profile.php" class="nav-link text-dark">Perfil</a></li>
         <li class="nav-item"><a href="close_session.php" class="nav-link text-dark">Terminar Sess&atilde;o</a></li>
       </ul>
-        <form class="d-flex col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search" method="post" action="read.php">
-          <button class="btn btn-dark" type="submit">Search</button>
-        </form>
+      <form class="d-flex col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="read.php" method="POST">
+        <input class="form-control me-2" type="text" name="pesquisa" placeholder="Pesquisa">
+        <button class="btn btn-dark" type="submit">Search</button>
+      </form>
+
       </div>
 
   </div>

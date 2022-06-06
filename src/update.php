@@ -1,7 +1,7 @@
 <?php
 //inicializar sess�o
 session_start();
-include ("assets/html/header.html");
+include ("assets/html/header.php");
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 

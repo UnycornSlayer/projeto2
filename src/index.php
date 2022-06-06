@@ -4,7 +4,7 @@ session_start();
 
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
-include ("assets/html/header.html");
+include ("assets/html/header.php");
 
 if( $_SESSION['login'] == TRUE){
 ?>
